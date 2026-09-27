@@ -1,0 +1,117 @@
+{
+  "timestamp": {
+    "dtype": "string",
+    "unit": "ISO-8601 UTC",
+    "description": "Standardized temporal index"
+  },
+  "sub_basin_id": {
+    "dtype": "string",
+    "unit": "categorical",
+    "description": "Sub-basin boundary identifier (SB-01 to SB-05)"
+  },
+  "rainfall_mm_1h": {
+    "dtype": "float",
+    "unit": "mm",
+    "description": "1-hour accumulated precipitation"
+  },
+  "rainfall_mm_3h": {
+    "dtype": "float",
+    "unit": "mm",
+    "description": "3-hour rolling accumulated precipitation"
+  },
+  "rainfall_mm_6h": {
+    "dtype": "float",
+    "unit": "mm",
+    "description": "6-hour rolling accumulated precipitation"
+  },
+  "rainfall_intensity_max": {
+    "dtype": "float",
+    "unit": "mm/h",
+    "description": "Peak instantaneous rain intensity"
+  },
+  "soil_moisture_percent": {
+    "dtype": "float",
+    "unit": "%",
+    "description": "Volumetric soil water saturation"
+  },
+  "soil_saturation_index": {
+    "dtype": "float",
+    "unit": "ratio [0-1]",
+    "description": "Normalized soil wetness ratio"
+  },
+  "saturation_status": {
+    "dtype": "string",
+    "unit": "categorical",
+    "description": "Soil state (DRY, MODERATE, SATURATED, SUPER_SATURATED)"
+  },
+  "water_level_cm": {
+    "dtype": "float",
+    "unit": "cm",
+    "description": "River gauge stage height above datum"
+  },
+  "water_level_rise_rate_cm_h": {
+    "dtype": "float",
+    "unit": "cm/h",
+    "description": "Calculated rate of stage rise"
+  },
+  "river_stage_status": {
+    "dtype": "string",
+    "unit": "categorical",
+    "description": "Stage hazard class (NORMAL, WATCH, WARNING, CRITICAL_OVERTOP)"
+  },
+  "forecast_rainfall_3h": {
+    "dtype": "float",
+    "unit": "mm",
+    "description": "NWP predicted 3-hour rainfall horizon"
+  },
+  "forecast_rainfall_6h": {
+    "dtype": "float",
+    "unit": "mm",
+    "description": "NWP predicted 6-hour rainfall horizon"
+  },
+  "community_severity_score": {
+    "dtype": "float",
+    "unit": "index [0-10]",
+    "description": "Aggregated crowdsourced danger signal score"
+  },
+  "community_report_count": {
+    "dtype": "integer",
+    "unit": "count",
+    "description": "Active citizen reports count in window"
+  },
+  "elevation_m": {
+    "dtype": "float",
+    "unit": "meters",
+    "description": "Sub-basin mean elevation (GIS spatial attribute)"
+  },
+  "slope_deg": {
+    "dtype": "float",
+    "unit": "degrees",
+    "description": "Sub-basin mean terrain slope (GIS spatial attribute)"
+  },
+  "distance_to_river_m": {
+    "dtype": "float",
+    "unit": "meters",
+    "description": "Proximity to primary river channel"
+  },
+  "drainage_density_km_km2": {
+    "dtype": "float",
+    "unit": "km/km2",
+    "description": "Sub-basin stream network density ratio"
+  },
+  "flood_hazard_label": {
+    "dtype": "integer",
+    "unit": "class [0-3]",
+    "description": "Ground truth hazard target for ML (0=Normal, 1=Watch, 2=Warning, 3=Critical)"
+  },
+  "data_type": {
+    "dtype": "string",
+    "unit": "provenance tag",
+    "description": "Data origin label (observed, estimated, forecast, historical, simulated, community_reported)"
+  },
+  "source_confidence": {
+    "dtype": "float",
+    "unit": "index [0-1]",
+    "description": "Fused multi-source data reliability index"
+  }
+}

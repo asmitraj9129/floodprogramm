@@ -1,0 +1,84 @@
+{
+  "project": "BasinPulse AI",
+  "module": "Member 3 - Data Engineering & Multi-Source Data Fusion",
+  "version": "1.0.0",
+  "data_sources": [
+    {
+      "source_id": "SRC_RAINFALL_HIST",
+      "name": "Historical Rain Gauge Network",
+      "data_type": "historical",
+      "default_confidence": 0.95,
+      "frequency": "1 hour",
+      "format": "CSV",
+      "storage_path": "data/raw/rainfall/rainfall_historical.csv",
+      "description": "Multi-year hourly precipitation observations across sub-basin monitoring stations."
+    },
+    {
+      "source_id": "SRC_RAINFALL_SIM",
+      "name": "Software Rainfall Feed Simulator",
+      "data_type": "simulated",
+      "default_confidence": 0.85,
+      "frequency": "15 minutes",
+      "format": "CSV",
+      "storage_path": "data/raw/rainfall/rainfall_simulated.csv",
+      "description": "Simulated live precipitation feed representing intense cloudburst and storm surge events."
+    },
+    {
+      "source_id": "SRC_SOIL_MOISTURE",
+      "name": "Sub-surface Soil Moisture Sensors",
+      "data_type": "observed",
+      "default_confidence": 0.90,
+      "frequency": "30 minutes",
+      "format": "CSV",
+      "storage_path": "data/raw/soil_moisture/soil_moisture.csv",
+      "description": "Volumetric soil water content (%) at 10cm depth across sub-basin zones."
+    },
+    {
+      "source_id": "SRC_RIVER_GAUGE",
+      "name": "River Hydrological Gauging Station",
+      "data_type": "observed",
+      "default_confidence": 0.92,
+      "frequency": "15 minutes",
+      "format": "CSV",
+      "storage_path": "data/raw/river/water_level.csv",
+      "description": "River stage level (cm), discharge rate (m3/s), and water rise acceleration."
+    },
+    {
+      "source_id": "SRC_WEATHER_FORECAST",
+      "name": "Numerical Weather Prediction (NWP) Forecast",
+      "data_type": "forecast",
+      "default_confidence": 0.78,
+      "frequency": "1 hour",
+      "format": "CSV",
+      "storage_path": "data/raw/forecast/rainfall_forecast.csv",
+      "description": "Short-range ensemble precipitation forecast (1h, 3h, 6h, 12h horizon predictions)."
+    },
+    {
+      "source_id": "SRC_HISTORICAL_FLOOD",
+      "name": "Historical Flood Events Registry",
+      "data_type": "historical",
+      "default_confidence": 0.98,
+      "frequency": "Event-based",
+      "format": "CSV",
+      "storage_path": "data/raw/historical_flood/historical_events.csv",
+      "description": "Curated catalog of past basin flood events with peak stage, duration, damage labels, and ground truth flood classes."
+    },
+    {
+      "source_id": "SRC_COMMUNITY_REPORT",
+      "name": "Community & Crowdsourced Ground Reports",
+      "data_type": "community_reported",
+      "default_confidence": 0.70,
+      "frequency": "Real-time stream",
+      "format": "JSON",
+      "storage_path": "data/raw/community_reports/sample_reports.json",
+      "description": "Citizen reports of waterlogging, bridge submergence, stream blockages, and localized hazards."
+    }
+  ],
+  "sub_basins": [
+    {"id": "SB-01", "name": "Upper Ridge Catchment", "area_sqkm": 42.5, "elevation_m": 480},
+    {"id": "SB-02", "name": "Mid-Basin Tributary North", "area_sqkm": 35.8, "elevation_m": 320},
+    {"id": "SB-03", "name": "Central Floodplain Corridor", "area_sqkm": 58.2, "elevation_m": 180},
+    {"id": "SB-04", "name": "Lower Gorge & Outlet", "area_sqkm": 29.1, "elevation_m": 95},
+    {"id": "SB-05", "name": "Eastern Hills Drainage", "area_sqkm": 38.0, "elevation_m": 390}
+  ]
+}
